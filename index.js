@@ -135,10 +135,10 @@ client.on("voiceStateUpdate", (oldState, newState) => {
         console.log(`${newState.member.user.tag} joined the voice channel.`);
 
         // إضافة ملف الصوت إلى قائمة الانتظار
-        queue.push(AUDIO_FILE);
-
-        // تشغيل الصوت إذا لم يكن هناك صوت يعمل
-        playNext();
+        setTimeout(() => {
+    queue.push(AUDIO_FILE);
+    playNext();
+}, 2000);
     }
 });
 
